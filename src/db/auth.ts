@@ -3,7 +3,14 @@ import React from 'react'
 import { AuthType } from '../types';
 
 const useAuth = () => {
+
+    
     const [auth, setAuth] = React.useState<AuthType>()
+
+    React.useEffect(()=> {
+        cekIsLogin()
+    }, [])
+
     const setLogin = async (value : AuthType) => {
         try {
           const jsonValue = JSON.stringify(value)

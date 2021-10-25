@@ -1,6 +1,6 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React from 'react';
-import {View, Text, Colors, Button} from 'react-native-ui-lib';
+import {View, Text, Colors, Button, Image} from 'react-native-ui-lib';
 import useTransaction from '../../db/transaction';
 import {TransactionType} from '../../types';
 
@@ -18,7 +18,13 @@ const CashFlowScreen = ({navigation}: NativeStackScreenProps<any>) => {
 
   return (
     <View padding-10 flex backgroundColor={Colors.white}>
-      <Text>Cash Flow List</Text>
+      <Text
+        marginV-20
+        text40M
+        style={{fontWeight: 'bold', letterSpacing: 1}}
+        color="#7F51E0">
+        Cash Flow List
+      </Text>
       {list.map((item: TransactionType) => {
         return (
           <View key={item.id} row spread padding-5 marginV-5 centerV>
@@ -32,7 +38,29 @@ const CashFlowScreen = ({navigation}: NativeStackScreenProps<any>) => {
               <Text>{item.keterangan}</Text>
             </View>
             <View>
-              <Text>{item.nominal}</Text>
+              {item.type == 'pemasukan' ? (
+                <Image
+                  marginR-10
+                  style={{
+                    height: 25,
+                    width: 25,
+                  }}
+                  source={{
+                    uri: 'https://cdn-icons-png.flaticon.com/512/271/271218.png',
+                  }}
+                />
+              ) : (
+                <Image
+                  marginR-10
+                  style={{
+                    height: 25,
+                    width: 25,
+                  }}
+                  source={{
+                    uri: 'https://www.freeiconspng.com/uploads/red-right-arrow-12.png',
+                  }}
+                />
+              )}
             </View>
           </View>
         );

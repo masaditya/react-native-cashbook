@@ -5,6 +5,11 @@ import { TransactionType } from '../types';
 const useTransaction = () => {
     const [loading, setLoading] = React.useState<boolean>(false)
     const [transaction, setTransaction] = React.useState<Array<TransactionType>>([])
+
+    React.useEffect(()=> {
+        getTransaction()
+    },[])
+
     const saveTransaction = async (value : Array<TransactionType>) => {
         setLoading(true)
         try {

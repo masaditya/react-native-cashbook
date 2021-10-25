@@ -6,6 +6,7 @@ import {
   Button,
   TextField,
   DateTimePicker,
+  Colors,
 } from 'react-native-ui-lib';
 import {TextFieldProps} from 'react-native-ui-lib/generatedTypes/src/incubator';
 import useTransaction from '../../db/transaction';
@@ -30,7 +31,14 @@ const PemasukanScreen = ({navigation}: NativeStackScreenProps<any>) => {
   };
 
   return (
-    <View padding-10>
+    <View padding-10 flex backgroundColor={Colors.white}>
+      <Text
+        marginV-20
+        text40M
+        style={{fontWeight: 'bold', letterSpacing: 1}}
+        color="#7F51E0">
+        Pemasukan
+      </Text>
       <DateTimePicker
         defaultValue={new Date().toLocaleDateString()}
         title="Tanggal"

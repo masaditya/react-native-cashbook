@@ -1,6 +1,13 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React from 'react';
-import {View, Text, TextField, Button, Toast} from 'react-native-ui-lib';
+import {
+  View,
+  Text,
+  TextField,
+  Button,
+  Toast,
+  Colors,
+} from 'react-native-ui-lib';
 import useAuth from '../../db/auth';
 
 const SettingScreen = ({navigation}: NativeStackScreenProps<any>) => {
@@ -43,9 +50,15 @@ const SettingScreen = ({navigation}: NativeStackScreenProps<any>) => {
   };
 
   return (
-    <View padding-10>
+    <View padding-10 backgroundColor={Colors.white} flex>
       <Toast visible={message !== ''} message={message} />
-      <Text>Ganti Password</Text>
+      <Text
+        marginV-20
+        text40M
+        style={{fontWeight: 'bold', letterSpacing: 1}}
+        color="#7F51E0">
+        Ganti Password
+      </Text>
       <TextField
         value={password}
         title="Password saat ini"
@@ -65,16 +78,24 @@ const SettingScreen = ({navigation}: NativeStackScreenProps<any>) => {
       <Button onPress={() => navigation.goBack()} fullWidth outline marginT-10>
         <Text>Kembali</Text>
       </Button>
-      <Button
-        onPress={() => {
-          logout().then(() => navigation.push('Login'));
-        }}
-        fullWidth
-        outline
-        marginT-20
-        red30>
-        <Text>Logout</Text>
-      </Button>
+      <View flex bottom>
+        <Text text50>Aplikasi ini dibuat oleh : </Text>
+
+        <Text>Nama : Aditya Eka Pradana Putra</Text>
+        <Text>NIM : 2041727007</Text>
+        <Text>Tanggal : 25 Oktober 2021</Text>
+
+        <Button
+          onPress={() => {
+            logout().then(() => navigation.push('Login'));
+          }}
+          fullWidth
+          outline
+          marginT-20
+          red30>
+          <Text>Logout</Text>
+        </Button>
+      </View>
     </View>
   );
 };

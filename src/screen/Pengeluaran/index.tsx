@@ -6,6 +6,7 @@ import {
   TextField,
   Button,
   DateTimePicker,
+  Colors,
 } from 'react-native-ui-lib';
 import useTransaction from '../../db/transaction';
 import {TransactionType} from '../../types';
@@ -31,7 +32,14 @@ const PengeluaranScreen = ({navigation}: NativeStackScreenProps<any>) => {
     setPengeluaranState({});
   };
   return (
-    <View padding-10>
+    <View padding-10 flex backgroundColor={Colors.white}>
+      <Text
+        marginV-20
+        text40M
+        style={{fontWeight: 'bold', letterSpacing: 1}}
+        color="#7F51E0">
+        Pengeluaran
+      </Text>
       <DateTimePicker
         defaultValue={new Date().toLocaleDateString()}
         title="Tanggal"
