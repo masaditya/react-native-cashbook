@@ -16,6 +16,7 @@ const useAuth = () => {
       const cekIsLogin = async () => {
         const jsonValue = await AsyncStorage.getItem('AUTH')
             if (jsonValue){
+                console.log("JSON VALUE", JSON.parse(jsonValue))
                 setAuth(JSON.parse(jsonValue))
                 return true
             }else{

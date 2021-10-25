@@ -5,11 +5,21 @@ import useAuth from '../../db/auth';
 import {AuthType} from '../../types';
 
 const LoginScreen = ({navigation}: NativeStackScreenProps<any>) => {
-  const {auth, setLogin} = useAuth();
+  const {auth, setLogin, cekIsLogin} = useAuth();
   const [credentials, setCredentials] = React.useState<AuthType>({
     username: '',
     password: '',
   });
+
+  React.useEffect(() => {
+    const cek = async () => {
+      const v = await cekIsLogin();
+      if (v) {
+        navigation.push('Home');
+      }
+    };
+    cek();
+  }, []);
 
   const onSubmit = async () => {
     if (
