@@ -1,6 +1,7 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React from 'react';
 import {View, Text, Colors, Button, Image} from 'react-native-ui-lib';
+import { images } from '../../db/image';
 import useTransaction from '../../db/transaction';
 import {TransactionType} from '../../types';
 
@@ -46,7 +47,7 @@ const CashFlowScreen = ({navigation}: NativeStackScreenProps<any>) => {
                     width: 25,
                   }}
                   source={{
-                    uri: 'https://cdn-icons-png.flaticon.com/512/271/271218.png',
+                    uri: images.iconPemasukan,
                   }}
                 />
               ) : (
@@ -57,7 +58,7 @@ const CashFlowScreen = ({navigation}: NativeStackScreenProps<any>) => {
                     width: 25,
                   }}
                   source={{
-                    uri: 'https://www.freeiconspng.com/uploads/red-right-arrow-12.png',
+                    uri: images.iconPengeluaran,
                   }}
                 />
               )}

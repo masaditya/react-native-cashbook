@@ -9,6 +9,7 @@ import {
   Colors,
 } from 'react-native-ui-lib';
 import useAuth from '../../db/auth';
+import { images } from '../../db/image';
 import {AuthType} from '../../types';
 
 const LoginScreen = ({navigation}: NativeStackScreenProps<any>) => {
@@ -48,7 +49,7 @@ const LoginScreen = ({navigation}: NativeStackScreenProps<any>) => {
             height: 200,
           }}
           source={{
-            uri: 'https://png.pngtree.com/png-vector/20190827/ourlarge/pngtree-book-cash-money-novel-blue-dotted-line-line-icon-png-image_1700552.jpg',
+            uri: images.loginImage,
           }}
         />
       </View>

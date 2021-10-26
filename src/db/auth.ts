@@ -17,7 +17,7 @@ const useAuth = () => {
           await AsyncStorage.setItem('AUTH', jsonValue)
           setAuth(value)
         } catch (e) {
-          // saving error
+          
         }
       }
       const cekIsLogin = async () => {
