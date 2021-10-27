@@ -17,7 +17,7 @@ const useAuth = () => {
           await AsyncStorage.setItem('AUTH', jsonValue)
           setAuth(value)
         } catch (e) {
-          // saving error
+          
         }
       }
       const cekIsLogin = async () => {
@@ -32,7 +32,7 @@ const useAuth = () => {
       }
 
       const logout = async () => {
-          const result = await AsyncStorage.removeItem("AUTH")
+          await AsyncStorage.removeItem("AUTH")
       }
 
     return { auth, setLogin, cekIsLogin, logout }

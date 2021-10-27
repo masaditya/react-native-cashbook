@@ -16,6 +16,7 @@ module.exports = {
     }),
   },
   resolver: {
-    blacklistRE: exclusionList([/dist\/.*/])
+    sourceExts: ['jsx', 'js', 'ts', 'tsx'], 
+    // blacklistRE: exclusionList([/dist\/.*/])
   }
 };
