@@ -10,6 +10,7 @@ import {
 } from 'react-native-ui-lib';
 import useAuth from '../../db/auth';
 import { images } from '../../db/image';
+import { userCred } from '../../db/loginCred';
 import {AuthType} from '../../types';
 
 const LoginScreen = ({navigation}: NativeStackScreenProps<any>) => {
@@ -31,9 +32,8 @@ const LoginScreen = ({navigation}: NativeStackScreenProps<any>) => {
 
   const onSubmit = async () => {
     if (
-      (credentials.username === 'user' &&
-        credentials.password === 'password') ||
-      credentials.password === '12345'
+      (credentials.username === userCred.username &&
+        credentials.password === userCred.password)
     ) {
       await setLogin(credentials);
       navigation.push('Home');
